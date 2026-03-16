@@ -46,7 +46,7 @@ The game now supports winning, correct hint messages, and proper reset behavior.
 python -m pytest -q
 ```
 
-(If you want, add a screenshot here from your successful run.)
+![Test Screenshot](pytest.jpg)
 
 ## 🚀 Stretch Features
 
