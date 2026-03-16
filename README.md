@@ -25,14 +25,30 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+This game is a number guessing challenge where the player attempts to guess a secret number in a limited number of tries. The app includes difficulty levels, an attempt limit, and a score system.
+
+Bugs found and fixed:
+- Direction hints were backwards (the text said "Go HIGHER" when the guess was too high).
+- Attempt initialization started at 1, causing off-by-one game-over behavior.
+- New game reset did not fully reset `status`, `history`, and score.
+
+Fixes applied:
+- Moved core game logic into `logic_utils.py` and imported helper functions in `app.py`.
+- Corrected `check_guess` output logic and messages.
+- Used `st.session_state` for persistent secret/attempts/status and reset properly.
+- Added regression tests in `tests/test_game_logic.py`.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+The game now supports winning, correct hint messages, and proper reset behavior. Tests pass (4/4) with:
+
+```bash
+python -m pytest -q
+```
+
+(If you want, add a screenshot here from your successful run.)
 
 ## 🚀 Stretch Features
 
-- [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
+- Completed core bug fixes and validation. No stretch screenshot added yet.
+
